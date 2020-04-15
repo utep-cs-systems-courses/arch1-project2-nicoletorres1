@@ -16,7 +16,7 @@ AS		= msp430-elf-as
 all: button.elf
 
 
-button.elf: ${COMMON_OBJECTS} p1_interrupt_handler.o led.o switches.o buttonMain.o buzzer.o state_machine.s  
+button.elf: ${COMMON_OBJECTS} p1_interrupt_handler.o led.o switches.o buttonMain.o buzzer.o state_machine.s ..lib/libTimer.a  
 
 	${CC} ${CFLAGS} ${LDFLAGS} -o $@ $^
 
